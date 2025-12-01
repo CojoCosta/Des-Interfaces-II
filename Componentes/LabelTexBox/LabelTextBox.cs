@@ -37,6 +37,9 @@ namespace LabelTexBox
                 if (Enum.IsDefined(typeof(EPosicion), value))
                 {
                     posicion = value;
+                    //PosicionChanged(this, new EventArgs());
+                    //PosicionChanged(this, EventArgs.Empty);
+                    OnPosicionChanged(EventArgs.Empty);
                     recolocar();
                 }
                 else
@@ -133,6 +136,18 @@ namespace LabelTexBox
         {
             Debug.WriteLine("KeyPressed de txt");
             OnKeyPress(e);
+        }
+
+        [Category("La propiedad cambió")]
+        [Description("Se lanza cuando la propiedad Posicion cambia")]
+        public event System.EventHandler PosicionChanged;
+
+        protected virtual void OnPosicionChanged(EventArgs e)
+        {
+            if (PosicionChanged != null)
+            {
+                PosicionChanged(this, e);
+            }
         }
     }
 }

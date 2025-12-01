@@ -52,6 +52,7 @@
             this.labelTexbox1.TabIndex = 2;
             this.labelTexbox1.TextLbl = "label1";
             this.labelTexbox1.TextTxt = "";
+            this.labelTexbox1.PosicionChanged += new System.EventHandler(this.labelTexbox1_PosicionChanged);
             this.labelTexbox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.labelTexbox1_KeyPress);
             // 
             // Form1

@@ -16,6 +16,7 @@ namespace PruebaWindowsForms
         public Form1()
         {
             InitializeComponent();
+            this.Click += button1_Click;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -26,6 +27,11 @@ namespace PruebaWindowsForms
         private void labelTexbox1_KeyPress(object sender, KeyPressEventArgs e)
         {
             Debug.WriteLine("PULSANDO");
+        }
+
+        private void labelTexbox1_PosicionChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine("CAMBIO DE POSICION");
         }
     }
 }

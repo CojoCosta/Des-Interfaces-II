@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using LabelTexBox;
 
 namespace PruebaWindowsForms
 {
@@ -21,7 +22,7 @@ namespace PruebaWindowsForms
         private void button1_Click(object sender, EventArgs e)
         {
             String texto = labelTexbox1.Text;
-
+            labelTexbox1.Posicion = labelTexbox1.Posicion == EPosicion.IZQUIERDA ? EPosicion.DERECHA : EPosicion.IZQUIERDA;
         }
 
         private void labelTexbox1_KeyPress(object sender, KeyPressEventArgs e)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace LabelTexBox
 {
@@ -14,6 +15,10 @@ namespace LabelTexBox
     {
         IZQUIERDA, DERECHA
     }
+    [
+        DefaultProperty("TextLbl"), 
+        DefaultEvent("Load") //Le pongo la funcion asociada que yo elija
+    ]
     public partial class LabelTexbox : UserControl
     {
         public LabelTexbox()
@@ -122,6 +127,12 @@ namespace LabelTexBox
         {
             base.OnPaint(e);
             recolocar();
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Debug.WriteLine("KeyPressed de txt");
+            OnKeyPress(e);
         }
     }
 }

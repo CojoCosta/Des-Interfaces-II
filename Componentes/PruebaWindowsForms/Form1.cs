@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,11 @@ namespace PruebaWindowsForms
         private void button1_Click(object sender, EventArgs e)
         {
             String texto = labelTexbox1.Text;
+        }
+
+        private void labelTexbox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Debug.WriteLine("PULSANDO");
         }
     }
 }

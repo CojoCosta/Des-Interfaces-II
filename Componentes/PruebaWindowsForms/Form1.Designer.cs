@@ -48,10 +48,11 @@
             this.labelTexbox1.Name = "labelTexbox1";
             this.labelTexbox1.Posicion = LabelTexBox.EPosicion.IZQUIERDA;
             this.labelTexbox1.Separacion = 20;
-            this.labelTexbox1.Size = new System.Drawing.Size(352, 20);
+            this.labelTexbox1.Size = new System.Drawing.Size(303, 20);
             this.labelTexbox1.TabIndex = 2;
             this.labelTexbox1.TextLbl = "label1";
             this.labelTexbox1.TextTxt = "";
+            this.labelTexbox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.labelTexbox1_KeyPress);
             // 
             // Form1
             // 

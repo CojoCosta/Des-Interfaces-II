@@ -16,12 +16,12 @@ namespace PruebaWindowsForms
         public Form1()
         {
             InitializeComponent();
-            this.Click += button1_Click;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             String texto = labelTexbox1.Text;
+
         }
 
         private void labelTexbox1_KeyPress(object sender, KeyPressEventArgs e)

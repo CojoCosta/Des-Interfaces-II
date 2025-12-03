@@ -29,7 +29,7 @@ namespace FormEjercicio1
 
         private void btnPosicion_Click(object sender, EventArgs e)
         {
-            if(lblTxt.Posicion == EPosicion.IZQUIERDA)
+            if (lblTxt.Posicion == EPosicion.IZQUIERDA)
             {
                 lblTxt.Posicion = EPosicion.DERECHA;
             }
@@ -46,9 +46,12 @@ namespace FormEjercicio1
 
         private void btnJuntar_Click(object sender, EventArgs e)
         {
-            lblTxt.Separacion -= 2;
+            if (lblTxt.Separacion > 0)
+            {
+                lblTxt.Separacion -= 2;
+            }
         }
 
-        
+
     }
 }

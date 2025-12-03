@@ -21,7 +21,7 @@ namespace ComponenteEj1
             InitializeComponent();
             TextLbl = Name;
             TextTxt = "";
-
+            recolocar();
         }
         private EPosicion posicion = EPosicion.IZQUIERDA;
         [Category("Appearance")]
@@ -109,19 +109,21 @@ namespace ComponenteEj1
                     txt.Location = new Point(lbl.Width + Separacion, 0);
                     //Establecemos ancho del Textbox
                     //(la label tiene ancho por autosize)
-                    txt.Width = this.Width - lbl.Width - Separacion;
+                    txt.Width =  200 ;
                     //Establecemos altura del componente
                     this.Height = Math.Max(txt.Height, lbl.Height);
+                    this.Width = txt.Width + lbl.Width + Separacion; 
                     break;
                 case EPosicion.DERECHA:
                     //Establecemos posición del componente txt
                     txt.Location = new Point(0, 0);
                     //Establecemos ancho del Textbox
-                    txt.Width = this.Width - lbl.Width - Separacion;
+                    txt.Width =  200 ;
                     //Establecemos posición del componente lbl
                     lbl.Location = new Point(txt.Width + Separacion, 0);
                     //Establecemos altura del componente (Puede sacarse del switch)
                     this.Height = Math.Max(txt.Height, lbl.Height);
+                    this.Width = txt.Width + lbl.Width + Separacion;
                     break;
             }
         }
@@ -189,7 +191,5 @@ namespace ComponenteEj1
                 return txt.PasswordChar; 
             }
         }
-
-
     }
 }

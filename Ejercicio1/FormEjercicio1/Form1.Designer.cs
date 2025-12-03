@@ -1,4 +1,5 @@
-﻿namespace FormEjercicio1
+﻿using ComponenteEj1;
+namespace FormEjercicio1
 {
     partial class Form1
     {

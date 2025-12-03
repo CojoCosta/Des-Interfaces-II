@@ -28,26 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.labelTextBox1 = new ComponenteEj1.LabelTextBox();
+            this.btnPosicion = new System.Windows.Forms.Button();
+            this.btnSeparar = new System.Windows.Forms.Button();
+            this.btnJuntar = new System.Windows.Forms.Button();
+            this.lblTxt = new ComponenteEj1.LabelTextBox();
             this.SuspendLayout();
             // 
-            // labelTextBox1
+            // btnPosicion
             // 
-            this.labelTextBox1.Location = new System.Drawing.Point(24, 12);
-            this.labelTextBox1.Name = "labelTextBox1";
-            this.labelTextBox1.Posicion = ComponenteEj1.EPosicion.IZQUIERDA;
-            this.labelTextBox1.Separacion = 0;
-            this.labelTextBox1.Size = new System.Drawing.Size(300, 20);
-            this.labelTextBox1.TabIndex = 0;
-            this.labelTextBox1.TextLbl = "label1";
-            this.labelTextBox1.TextTxt = "";
+            this.btnPosicion.Location = new System.Drawing.Point(166, 58);
+            this.btnPosicion.Name = "btnPosicion";
+            this.btnPosicion.Size = new System.Drawing.Size(115, 23);
+            this.btnPosicion.TabIndex = 1;
+            this.btnPosicion.Text = "Cambio de posición";
+            this.btnPosicion.UseVisualStyleBackColor = true;
+            this.btnPosicion.Click += new System.EventHandler(this.btnPosicion_Click);
+            // 
+            // btnSeparar
+            // 
+            this.btnSeparar.Location = new System.Drawing.Point(24, 58);
+            this.btnSeparar.Name = "btnSeparar";
+            this.btnSeparar.Size = new System.Drawing.Size(115, 23);
+            this.btnSeparar.TabIndex = 2;
+            this.btnSeparar.Text = "Separar";
+            this.btnSeparar.UseVisualStyleBackColor = true;
+            this.btnSeparar.Click += new System.EventHandler(this.btnSeparar_Click);
+            // 
+            // btnJuntar
+            // 
+            this.btnJuntar.Location = new System.Drawing.Point(24, 104);
+            this.btnJuntar.Name = "btnJuntar";
+            this.btnJuntar.Size = new System.Drawing.Size(115, 23);
+            this.btnJuntar.TabIndex = 3;
+            this.btnJuntar.Text = "Juntar";
+            this.btnJuntar.UseVisualStyleBackColor = true;
+            this.btnJuntar.Click += new System.EventHandler(this.btnJuntar_Click);
+            // 
+            // lblTxt
+            // 
+            this.lblTxt.Location = new System.Drawing.Point(24, 12);
+            this.lblTxt.Name = "lblTxt";
+            this.lblTxt.Posicion = ComponenteEj1.EPosicion.IZQUIERDA;
+            this.lblTxt.PswChr = '*';
+            this.lblTxt.Separacion = 0;
+            this.lblTxt.Size = new System.Drawing.Size(298, 20);
+            this.lblTxt.TabIndex = 0;
+            this.lblTxt.TextLbl = "label1";
+            this.lblTxt.TextTxt = "";
+            this.lblTxt.PosicionChanged += new System.EventHandler(this.labelTextBox1_PosicionChanged);
+            this.lblTxt.SeparacionChanged += new System.EventHandler(this.labelTextBox1_SeparacionChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelTextBox1);
+            this.Controls.Add(this.btnJuntar);
+            this.Controls.Add(this.btnSeparar);
+            this.Controls.Add(this.btnPosicion);
+            this.Controls.Add(this.lblTxt);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -56,7 +95,10 @@
 
         #endregion
 
-        private ComponenteEj1.LabelTextBox labelTextBox1;
+        private ComponenteEj1.LabelTextBox lblTxt;
+        private System.Windows.Forms.Button btnPosicion;
+        private System.Windows.Forms.Button btnSeparar;
+        private System.Windows.Forms.Button btnJuntar;
     }
 }
 

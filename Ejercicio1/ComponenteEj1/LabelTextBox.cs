@@ -33,6 +33,7 @@ namespace ComponenteEj1
                 if (Enum.IsDefined(typeof(EPosicion), value))
                 {
                     posicion = value;
+                    OnPosicionChanged(EventArgs.Empty);
                     recolocar();
                 }
                 else
@@ -76,6 +77,7 @@ namespace ComponenteEj1
             set
             {
                 lbl.Text = value;
+                OnTextChanged(EventArgs.Empty);
                 recolocar();
             }
             get
@@ -143,7 +145,51 @@ namespace ComponenteEj1
             {
                 PosicionChanged(this, e);
             }
-            PosicionChanged?.Invoke(this, e);
+            //PosicionChanged?.Invoke(this, e);
         }
+
+        [Category("La propiedad cambió")]
+        [Description("Se lanza cuando la propiedad Separacion cambia")]
+        public event System.EventHandler SeparacionChanged;
+        protected virtual void OnSeparacionChanged(EventArgs e)
+        {
+            if (SeparacionChanged != null)
+            {
+                SeparacionChanged(this, e);
+            }
+        }
+
+
+        private void txt_KeyUp(object sender, KeyPressEventArgs e)
+        {
+            this.OnKeyPress(e);
+        }
+
+        [Category("La propiedad cambió")]
+        [Description("Se lanza cuando la propiedad TextChanged cambia")]
+        public event System.EventHandler TextChanged;
+        protected virtual void OnTextChanged(EventArgs e)
+        {
+            if (TextChanged != null)
+            {
+                TextChanged(this, e);
+            }
+        }
+
+        [Category("Mis Propiedades")]
+        [Description("El texto pasa a ser oculto como una contraseña")]
+        public char PswChr
+        {
+            set
+            {
+                txt.PasswordChar = '*';
+            }
+            get 
+            { 
+                return txt.PasswordChar; 
+            }
+        }
+
+
     }
 }

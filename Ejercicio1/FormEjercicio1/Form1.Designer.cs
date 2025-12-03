@@ -72,7 +72,7 @@ namespace FormEjercicio1
             this.lblTxt.Posicion = ComponenteEj1.EPosicion.IZQUIERDA;
             this.lblTxt.PswChr = '*';
             this.lblTxt.Separacion = 0;
-            this.lblTxt.Size = new System.Drawing.Size(298, 20);
+            this.lblTxt.Size = new System.Drawing.Size(235, 20);
             this.lblTxt.TabIndex = 0;
             this.lblTxt.TextLbl = "label1";
             this.lblTxt.TextTxt = "";

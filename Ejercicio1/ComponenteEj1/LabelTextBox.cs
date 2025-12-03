@@ -109,7 +109,7 @@ namespace ComponenteEj1
                     txt.Location = new Point(lbl.Width + Separacion, 0);
                     //Establecemos ancho del Textbox
                     //(la label tiene ancho por autosize)
-                    txt.Width =  200 ;
+                    txt.Width = this.Width - lbl.Width - Separacion;
                     //Establecemos altura del componente
                     this.Height = Math.Max(txt.Height, lbl.Height);
                     this.Width = txt.Width + lbl.Width + Separacion; 
@@ -118,7 +118,7 @@ namespace ComponenteEj1
                     //Establecemos posición del componente txt
                     txt.Location = new Point(0, 0);
                     //Establecemos ancho del Textbox
-                    txt.Width =  200 ;
+                    txt.Width = this.Width - lbl.Width - Separacion;
                     //Establecemos posición del componente lbl
                     lbl.Location = new Point(txt.Width + Separacion, 0);
                     //Establecemos altura del componente (Puede sacarse del switch)

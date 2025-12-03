@@ -37,8 +37,10 @@
             this.labelTextBox1.Name = "labelTextBox1";
             this.labelTextBox1.Posicion = ComponenteEj1.EPosicion.IZQUIERDA;
             this.labelTextBox1.Separacion = 0;
-            this.labelTextBox1.Size = new System.Drawing.Size(350, 139);
+            this.labelTextBox1.Size = new System.Drawing.Size(300, 20);
             this.labelTextBox1.TabIndex = 0;
+            this.labelTextBox1.TextLbl = "label1";
+            this.labelTextBox1.TextTxt = "";
             // 
             // Form1
             // 

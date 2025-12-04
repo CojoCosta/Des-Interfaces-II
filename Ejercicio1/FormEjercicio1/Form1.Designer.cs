@@ -67,17 +67,20 @@ namespace FormEjercicio1
             // 
             // lblTxt
             // 
+            this.lblTxt.ColorSub = System.Drawing.Color.Black;
             this.lblTxt.Location = new System.Drawing.Point(32, 27);
             this.lblTxt.Name = "lblTxt";
             this.lblTxt.Posicion = ComponenteEj1.EPosicion.IZQUIERDA;
-            this.lblTxt.PswChr = '*';
+            this.lblTxt.PswChr = '·';
             this.lblTxt.Separacion = 0;
-            this.lblTxt.Size = new System.Drawing.Size(235, 20);
+            this.lblTxt.Size = new System.Drawing.Size(202, 20);
+            this.lblTxt.Subrayado = true;
             this.lblTxt.TabIndex = 0;
             this.lblTxt.TextLbl = "label1";
             this.lblTxt.TextTxt = "";
             this.lblTxt.PosicionChanged += new System.EventHandler(this.labelTextBox1_PosicionChanged);
             this.lblTxt.SeparacionChanged += new System.EventHandler(this.labelTextBox1_SeparacionChanged);
+            this.lblTxt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.lblTxt_KeyUp);
             // 
             // Form1
             // 

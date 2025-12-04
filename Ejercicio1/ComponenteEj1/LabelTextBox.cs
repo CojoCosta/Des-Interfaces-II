@@ -15,7 +15,7 @@ namespace ComponenteEj1
     {
         IZQUIERDA, DERECHA
     }
-    public partial class LabelTextBox : UserControl
+    public partial class LabelTextBox : UserControl//Subrayado.  TextChanged->OnTxtChanged
     {
         public LabelTextBox()
         {
@@ -35,7 +35,6 @@ namespace ComponenteEj1
                 {
                     posicion = value;
                     OnPosicionChanged(EventArgs.Empty);
-                    //recolocar();
                     Refresh();
                 }
                 else
@@ -60,7 +59,7 @@ namespace ComponenteEj1
                 if (value >= 0)
                 {
                     separacion = value;
-                    //recolocar();
+                    OnSeparacionChanged(EventArgs.Empty);
                     Refresh();
                 }
                 else
@@ -80,8 +79,7 @@ namespace ComponenteEj1
             set
             {
                 lbl.Text = value;
-                OnTextChanged(EventArgs.Empty);
-                recolocar();
+                Refresh();
             }
             get
             {
@@ -112,16 +110,16 @@ namespace ComponenteEj1
                     txt.Location = new Point(lbl.Width + Separacion, 0);
                     //Establecemos ancho del Textbox
                     //(la label tiene ancho por autosize)
-                    txt.Width = this.Width - lbl.Width - Separacion;
+                    //txt.Width = this.Width - lbl.Width - Separacion;
                     //Establecemos altura del componente
                     this.Height = Math.Max(txt.Height, lbl.Height);
-                    this.Width = txt.Width + lbl.Width + Separacion; 
+                    this.Width = txt.Width + lbl.Width + Separacion;
                     break;
                 case EPosicion.DERECHA:
                     //Establecemos posición del componente txt
                     txt.Location = new Point(0, 0);
                     //Establecemos ancho del Textbox
-                    txt.Width = this.Width - lbl.Width - Separacion;
+                    //txt.Width = this.Width - lbl.Width - Separacion;
                     //Establecemos posición del componente lbl
                     lbl.Location = new Point(txt.Width + Separacion, 0);
                     //Establecemos altura del componente (Puede sacarse del switch)
@@ -129,21 +127,16 @@ namespace ComponenteEj1
                     this.Width = txt.Width + lbl.Width + Separacion;
                     break;
             }
-            Refresh();
         }
-        bool subrayar = true;
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            e.Graphics.DrawLine(new Pen(Color.Violet),
-            lbl.Left, this.Height - 1,
-            lbl.Left + lbl.Width, this.Height - 1);
-            recolocar();
-        }
+
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
         {
-            this.OnKeyPress(e);
+            OnKeyPress(e);
+        }
+        private void txt_KeyUp(object sender, KeyEventArgs e)
+        {
+            OnKeyUp(e);
         }
 
         [Category("La propiedad cambió")]
@@ -170,20 +163,20 @@ namespace ComponenteEj1
         }
 
 
-        private void txt_KeyUp(object sender, KeyPressEventArgs e)
-        {
-            this.OnKeyPress(e);
-        }
 
         [Category("La propiedad cambió")]
         [Description("Se lanza cuando la propiedad TextChanged cambia")]
-        public event System.EventHandler TextChanged;
-        protected virtual void OnTextChanged(EventArgs e)
+        public event System.EventHandler TxtChanged;
+        protected virtual void OnTxtChanged(EventArgs e)
         {
-            if (TextChanged != null)
+            if (TxtChanged != null)
             {
-                TextChanged(this, e);
+                TxtChanged(this, e);
             }
+        }
+        private void txt_TextChanged(object sender, EventArgs e)
+        {
+            OnTxtChanged(e);
         }
 
         [Category("Mis Propiedades")]
@@ -192,14 +185,52 @@ namespace ComponenteEj1
         {
             set
             {
-                txt.PasswordChar = '*';
+                txt.PasswordChar = value;
             }
-            get 
-            { 
-                return txt.PasswordChar; 
+            get
+            {
+                return txt.PasswordChar;
             }
         }
-
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            if (subrayado)
+            {
+                e.Graphics.DrawLine(new Pen(colorSub), lbl.Left, this.Height - 1,  lbl.Left + lbl.Width, this.Height - 1);
+            }
+            recolocar();
+        }
+        [Category("Mis propiedades")]
+        [Description("Elige si subrayar o no")]
+        private bool subrayado;
+        public bool Subrayado
+        {
+            set
+            {
+                subrayado = value;
+                Refresh();
+            }
+            get
+            {
+                return subrayado;
+            }
+        }
+        [Category("Mis propiedades")]
+        [Description("Elige color del subrayado")]
+        private Color colorSub;
+        public Color ColorSub
+        {
+            set
+            {
+                colorSub = value;
+                Refresh();
+            }
+            get
+            {
+                return colorSub;
+            }
+        }
 
     }
 }

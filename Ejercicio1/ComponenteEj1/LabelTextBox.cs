@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Drawing;
 using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,7 +35,8 @@ namespace ComponenteEj1
                 {
                     posicion = value;
                     OnPosicionChanged(EventArgs.Empty);
-                    recolocar();
+                    //recolocar();
+                    Refresh();
                 }
                 else
                 {
@@ -58,7 +60,8 @@ namespace ComponenteEj1
                 if (value >= 0)
                 {
                     separacion = value;
-                    recolocar();
+                    //recolocar();
+                    Refresh();
                 }
                 else
                 {
@@ -126,11 +129,15 @@ namespace ComponenteEj1
                     this.Width = txt.Width + lbl.Width + Separacion;
                     break;
             }
+            Refresh();
         }
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
             recolocar();
+            e.Graphics.DrawLine(new Pen(Color.Violet),
+            lbl.Left, this.Height - 1,
+            lbl.Left + lbl.Width, this.Height - 1);
         }
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)
@@ -191,5 +198,7 @@ namespace ComponenteEj1
                 return txt.PasswordChar; 
             }
         }
+
+
     }
 }

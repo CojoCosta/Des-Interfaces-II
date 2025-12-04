@@ -131,13 +131,14 @@ namespace ComponenteEj1
             }
             Refresh();
         }
+        bool subrayar = true;
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            recolocar();
             e.Graphics.DrawLine(new Pen(Color.Violet),
             lbl.Left, this.Height - 1,
             lbl.Left + lbl.Width, this.Height - 1);
+            recolocar();
         }
 
         private void txt_KeyPress(object sender, KeyPressEventArgs e)

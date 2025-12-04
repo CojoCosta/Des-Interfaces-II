@@ -37,9 +37,9 @@ namespace FormEjercicio1
             // 
             // btnPosicion
             // 
-            this.btnPosicion.Location = new System.Drawing.Point(166, 58);
+            this.btnPosicion.Location = new System.Drawing.Point(174, 73);
             this.btnPosicion.Name = "btnPosicion";
-            this.btnPosicion.Size = new System.Drawing.Size(115, 23);
+            this.btnPosicion.Size = new System.Drawing.Size(118, 23);
             this.btnPosicion.TabIndex = 1;
             this.btnPosicion.Text = "Cambio de posición";
             this.btnPosicion.UseVisualStyleBackColor = true;
@@ -47,9 +47,9 @@ namespace FormEjercicio1
             // 
             // btnSeparar
             // 
-            this.btnSeparar.Location = new System.Drawing.Point(24, 58);
+            this.btnSeparar.Location = new System.Drawing.Point(32, 73);
             this.btnSeparar.Name = "btnSeparar";
-            this.btnSeparar.Size = new System.Drawing.Size(115, 23);
+            this.btnSeparar.Size = new System.Drawing.Size(118, 23);
             this.btnSeparar.TabIndex = 2;
             this.btnSeparar.Text = "Separar";
             this.btnSeparar.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@ namespace FormEjercicio1
             // 
             // btnJuntar
             // 
-            this.btnJuntar.Location = new System.Drawing.Point(24, 104);
+            this.btnJuntar.Location = new System.Drawing.Point(32, 119);
             this.btnJuntar.Name = "btnJuntar";
-            this.btnJuntar.Size = new System.Drawing.Size(115, 23);
+            this.btnJuntar.Size = new System.Drawing.Size(118, 23);
             this.btnJuntar.TabIndex = 3;
             this.btnJuntar.Text = "Juntar";
             this.btnJuntar.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@ namespace FormEjercicio1
             // 
             // lblTxt
             // 
-            this.lblTxt.Location = new System.Drawing.Point(24, 12);
+            this.lblTxt.Location = new System.Drawing.Point(32, 27);
             this.lblTxt.Name = "lblTxt";
             this.lblTxt.Posicion = ComponenteEj1.EPosicion.IZQUIERDA;
             this.lblTxt.PswChr = '*';
@@ -83,7 +83,7 @@ namespace FormEjercicio1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(816, 472);
             this.Controls.Add(this.btnJuntar);
             this.Controls.Add(this.btnSeparar);
             this.Controls.Add(this.btnPosicion);

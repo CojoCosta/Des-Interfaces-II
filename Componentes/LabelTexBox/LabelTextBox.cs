@@ -141,7 +141,6 @@ namespace LabelTexBox
         [Category("La propiedad cambió")]
         [Description("Se lanza cuando la propiedad Posicion cambia")]
         public event System.EventHandler PosicionChanged;
-
         protected virtual void OnPosicionChanged(EventArgs e)
         {
             if (PosicionChanged != null)

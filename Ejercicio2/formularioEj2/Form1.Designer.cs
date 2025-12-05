@@ -1,6 +1,6 @@
-﻿namespace Ejercicio2
+﻿namespace formularioEj2
 {
-    partial class UserControl1
+    partial class Form1
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -20,7 +20,7 @@
             base.Dispose(disposing);
         }
 
-        #region Código generado por el Diseñador de componentes
+        #region Código generado por el Diseñador de Windows Forms
 
         /// <summary>
         /// Método necesario para admitir el Diseñador. No se puede modificar
@@ -28,11 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.etiquetaAviso1 = new Ejercicio2.EtiquetaAviso();
+            this.SuspendLayout();
+            // 
+            // etiquetaAviso1
+            // 
+            this.etiquetaAviso1.Location = new System.Drawing.Point(78, 42);
+            this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Cruz;
+            this.etiquetaAviso1.Name = "etiquetaAviso1";
+            this.etiquetaAviso1.Size = new System.Drawing.Size(97, 15);
+            this.etiquetaAviso1.TabIndex = 0;
+            this.etiquetaAviso1.Text = "etiquetaAviso1";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.etiquetaAviso1);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private Ejercicio2.EtiquetaAviso etiquetaAviso1;
     }
 }
+

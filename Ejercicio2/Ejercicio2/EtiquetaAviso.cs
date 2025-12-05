@@ -23,14 +23,6 @@ namespace Ejercicio2
             Cruz,
             Circulo
         }
-        //protected override void OnPaint(PaintEventArgs pe)
-        //{
-        //    base.OnPaint(pe);
-        //    Graphics g = pe.Graphics;
-        //    SolidBrush b = new SolidBrush(this.ForeColor);
-        //    g.DrawString(this.Text, this.Font, b, 0, 0);
-        //    this.Size = g.MeasureString(this.Text, this.Font).ToSize();
-        //}
         protected override void OnTextChanged(EventArgs e)
         {
             base.OnTextChanged(e);
@@ -93,6 +85,20 @@ namespace Ejercicio2
             Size tam = g.MeasureString(this.Text, this.Font).ToSize();
             this.Size = new Size(tam.Width + offsetX + grosor, tam.Height + offsetY * 2);
             b.Dispose();
+        }
+        [Category("ZZZ")]
+        [Description("Elegir si el colore es gradiente entre 2 colores o es un color unico")]
+        private bool gradiente;
+        public bool Gradiente
+        {
+            set
+            {
+                this.gradiente = value;
+            }
+            get 
+            {  
+                return this.gradiente; 
+            }
         }
     }
 }

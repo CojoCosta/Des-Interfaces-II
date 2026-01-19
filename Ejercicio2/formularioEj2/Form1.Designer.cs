@@ -33,6 +33,8 @@
             // 
             // etiquetaAviso1
             // 
+            this.etiquetaAviso1.ColorFinal = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.etiquetaAviso1.ColorInicial = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.etiquetaAviso1.Gradiente = true;
             this.etiquetaAviso1.Location = new System.Drawing.Point(78, 42);
             this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Nada;

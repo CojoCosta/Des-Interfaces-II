@@ -19,8 +19,6 @@ namespace Ejercicio2
         {
             InitializeComponent();
         }
-        Color colorInicial = Color.Blue;
-        Color colorFinal = Color.Green;
         public enum EMarca
         {
             Nada,
@@ -33,6 +31,7 @@ namespace Ejercicio2
             base.OnTextChanged(e);
             Refresh();
         }
+
         private EMarca marca = EMarca.Nada;
         [Category("Appearance")]
         [Description("Indica el tipo de marca que aparece junto al texto")]
@@ -62,7 +61,11 @@ namespace Ejercicio2
             // a la hora de dibujar
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //Dependiendo del valor de la propiedad marca dibujamos una
-            //Cruz o un Círculo
+            LinearGradientBrush gradiente = new LinearGradientBrush(new Point(0, 20), new Point(20, 40), colorInicial, colorFinal);
+            if (Gradiente)
+            {
+                graphics.FillRectangle(gradiente,new Rectangle(0, 0, Width, Height));
+            }
             switch (Marca)
             {
                 case EMarca.Circulo:
@@ -87,24 +90,43 @@ namespace Ejercicio2
 
                     break;
             }
-            //gradiente
-            LinearGradientBrush gradiente = new LinearGradientBrush(new Point(0, 20), new Point(20, 40), colorInicial, colorFinal);
             SolidBrush solidBrush = new SolidBrush(this.ForeColor);
-            if (Gradiente)
-            {
-                graphics.DrawString(this.Text, this.Font, gradiente, offsetX + grosor, offsetY);
-                gradiente.Dispose();
-            }
-            else
-            {
-                graphics.DrawString(this.Text, this.Font, solidBrush, offsetX + grosor, offsetY);
-                solidBrush.Dispose();
-            }
+            graphics.DrawString(this.Text, this.Font, solidBrush, offsetX + grosor, offsetY);
+            solidBrush.Dispose();
             Size tam = graphics.MeasureString(this.Text, this.Font).ToSize();
             this.Size = new Size(tam.Width + offsetX + grosor, tam.Height + offsetY * 2);
         }
         [Category("Colores")]
-        [Description("Elegir si el colore es gradiente entre 2 colores o es un color unico")]
+        [Description("Elegir color es el inicial")]
+        private Color colorInicial;
+        public Color ColorInicial
+        {
+            set
+            {
+                this.colorInicial = value;
+            }
+            get
+            {
+                return this.colorInicial;
+            }
+        }
+        [Category("Colores")]
+        [Description("Elegir color es el inicial")]
+        private Color colorFinal;
+        public Color ColorFinal
+        {
+            set
+            {
+                this.colorFinal = value;
+            }
+            get
+            {
+                return this.colorFinal;
+            }
+        }
+
+        [Category("Colores")]
+        [Description("Elegir si el color es gradiente entre 2 colores o es un color unico")]
         private bool gradiente;
         public bool Gradiente
         {

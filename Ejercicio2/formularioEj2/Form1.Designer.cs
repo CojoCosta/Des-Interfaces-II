@@ -33,10 +33,11 @@
             // 
             // etiquetaAviso1
             // 
+            this.etiquetaAviso1.Gradiente = true;
             this.etiquetaAviso1.Location = new System.Drawing.Point(78, 42);
-            this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Cruz;
+            this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Nada;
             this.etiquetaAviso1.Name = "etiquetaAviso1";
-            this.etiquetaAviso1.Size = new System.Drawing.Size(97, 15);
+            this.etiquetaAviso1.Size = new System.Drawing.Size(78, 13);
             this.etiquetaAviso1.TabIndex = 0;
             this.etiquetaAviso1.Text = "etiquetaAviso1";
             // 

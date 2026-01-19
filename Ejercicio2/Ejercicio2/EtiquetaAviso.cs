@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Configuration;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +19,14 @@ namespace Ejercicio2
         {
             InitializeComponent();
         }
+        Color colorInicial = Color.Blue;
+        Color colorFinal = Color.Green;
         public enum EMarca
         {
             Nada,
             Cruz,
-            Circulo
+            Circulo,
+            Imagen
         }
         protected override void OnTextChanged(EventArgs e)
         {
@@ -47,7 +52,7 @@ namespace Ejercicio2
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            Graphics g = e.Graphics;
+            Graphics graphics = e.Graphics;
             int grosor = 0; //Grosor de las líneas de dibujo
             int offsetX = 0; //Desplazamiento a la derecha del texto
             int offsetY = 0; //Desplazamiento hacia abajo del texto
@@ -55,14 +60,14 @@ namespace Ejercicio2
             int h = this.Font.Height;
             //Esta propiedad provoca mejoras en la apariencia o en la eficiencia
             // a la hora de dibujar
-            g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             //Dependiendo del valor de la propiedad marca dibujamos una
             //Cruz o un Círculo
             switch (Marca)
             {
                 case EMarca.Circulo:
                     grosor = 20;
-                    g.DrawEllipse(new Pen(Color.Green, grosor), grosor, grosor,
+                    graphics.DrawEllipse(new Pen(Color.Green, grosor), grosor, grosor,
                     h, h);
                     offsetX = h + grosor;
                     offsetY = grosor;
@@ -70,23 +75,35 @@ namespace Ejercicio2
                 case EMarca.Cruz:
                     grosor = 3;
                     Pen lapiz = new Pen(Color.Red, grosor);
-                    g.DrawLine(lapiz, grosor, grosor, h, h);
-                    g.DrawLine(lapiz, h, grosor, grosor, h);
+                    graphics.DrawLine(lapiz, grosor, grosor, h, h);
+                    graphics.DrawLine(lapiz, h, grosor, grosor, h);
                     offsetX = h + grosor;
                     offsetY = grosor / 2;
                     //Es recomendable liberar recursos de dibujo pues se
                     //pueden realizar muchos y cogen memoria
                     lapiz.Dispose();
                     break;
+                case EMarca.Imagen:
+
+                    break;
             }
-            //Finalmente pintamos el Texto; desplazado si fuera necesario
-            SolidBrush b = new SolidBrush(this.ForeColor);
-            g.DrawString(this.Text, this.Font, b, offsetX + grosor, offsetY);
-            Size tam = g.MeasureString(this.Text, this.Font).ToSize();
+            //gradiente
+            LinearGradientBrush gradiente = new LinearGradientBrush(new Point(0, 20), new Point(20, 40), colorInicial, colorFinal);
+            SolidBrush solidBrush = new SolidBrush(this.ForeColor);
+            if (Gradiente)
+            {
+                graphics.DrawString(this.Text, this.Font, gradiente, offsetX + grosor, offsetY);
+                gradiente.Dispose();
+            }
+            else
+            {
+                graphics.DrawString(this.Text, this.Font, solidBrush, offsetX + grosor, offsetY);
+                solidBrush.Dispose();
+            }
+            Size tam = graphics.MeasureString(this.Text, this.Font).ToSize();
             this.Size = new Size(tam.Width + offsetX + grosor, tam.Height + offsetY * 2);
-            b.Dispose();
         }
-        [Category("ZZZ")]
+        [Category("Colores")]
         [Description("Elegir si el colore es gradiente entre 2 colores o es un color unico")]
         private bool gradiente;
         public bool Gradiente
@@ -95,9 +112,9 @@ namespace Ejercicio2
             {
                 this.gradiente = value;
             }
-            get 
-            {  
-                return this.gradiente; 
+            get
+            {
+                return this.gradiente;
             }
         }
     }

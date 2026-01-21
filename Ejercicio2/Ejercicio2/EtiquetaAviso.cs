@@ -40,7 +40,7 @@ namespace Ejercicio2
             base.OnPaint(e);
             Graphics graphics = e.Graphics;
             int grosor = 0; //Grosor de las líneas de dibujo
-                             // Altura de fuente, usada como referencia en varias partes
+                            // Altura de fuente, usada como referencia en varias partes
             int h = this.Font.Height;
             //Esta propiedad provoca mejoras en la apariencia o en la eficiencia
             // a la hora de dibujar
@@ -89,16 +89,20 @@ namespace Ejercicio2
         [Category("Clickar")]
         [Description("Solo poder hacer click en la imagen")]
         public event System.EventHandler ClickEnMarca;
-        protected virtual void OnMouseclick(object sender, MouseEventArgs e)
+        protected override void OnMouseClick(MouseEventArgs e)
         {
-            if (true)
+            base.OnMouseClick(e);
+            if (marca != EMarca.Nada)
             {
                 
             }
         }
         protected virtual void OnClickEnMarca(object sender)
         {
-            ClickEnMarca(sender, EventArgs.Empty);
+            if (ClickEnMarca != null)
+            {
+                ClickEnMarca(sender, EventArgs.Empty);
+            }
         }
 
         private EMarca marca = EMarca.Nada;

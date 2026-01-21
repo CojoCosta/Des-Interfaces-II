@@ -16,5 +16,10 @@ namespace formularioEj2
         {
             InitializeComponent();
         }
+
+        private void etiquetaAviso1_ClickEnMarca(object sender, EventArgs e)
+        {
+            MessageBox.Show("Has clickado en el icono o imagen");
+        }
     }
 }

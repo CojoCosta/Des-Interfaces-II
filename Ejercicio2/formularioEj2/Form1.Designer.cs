@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.etiquetaAviso1 = new Ejercicio2.EtiquetaAviso();
             this.SuspendLayout();
             // 
@@ -35,13 +36,16 @@
             // 
             this.etiquetaAviso1.ColorFinal = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.etiquetaAviso1.ColorInicial = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.etiquetaAviso1.Font = new System.Drawing.Font("Mongolian Baiti", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.etiquetaAviso1.Gradiente = true;
+            this.etiquetaAviso1.ImagenMarca = ((System.Drawing.Image)(resources.GetObject("etiquetaAviso1.ImagenMarca")));
             this.etiquetaAviso1.Location = new System.Drawing.Point(78, 42);
-            this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Nada;
+            this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Imagen;
             this.etiquetaAviso1.Name = "etiquetaAviso1";
-            this.etiquetaAviso1.Size = new System.Drawing.Size(78, 13);
+            this.etiquetaAviso1.Size = new System.Drawing.Size(374, 57);
             this.etiquetaAviso1.TabIndex = 0;
             this.etiquetaAviso1.Text = "etiquetaAviso1";
+            this.etiquetaAviso1.ClickEnMarca += new System.EventHandler(this.etiquetaAviso1_ClickEnMarca);
             // 
             // Form1
             // 

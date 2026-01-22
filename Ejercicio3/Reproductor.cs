@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ejercicio3
 {
-    public partial class UserControl1: UserControl
+    public partial class Reproductor: UserControl
     {
-        public UserControl1()
+        public Reproductor()
         {
             InitializeComponent();
         }
@@ -30,6 +30,9 @@ namespace Ejercicio3
                 playPause = true;
             }
         }
-        [Category ("")]
+        [Category ("Clickar")]
+        [Description("play click")]
+        public event EventHandler PlayClick;
+
     }
 }

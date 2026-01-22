@@ -1,6 +1,6 @@
 ﻿namespace Ejercicio3
 {
-    partial class UserControl1
+    partial class Reproductor
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.btnPlayPause = new System.Windows.Forms.Button();
+            this.lblTiempo = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // btnPlayPause
@@ -41,19 +42,31 @@
             this.btnPlayPause.UseVisualStyleBackColor = true;
             this.btnPlayPause.Click += new System.EventHandler(this.btnPlayPause_Click);
             // 
-            // UserControl1
+            // lblTiempo
+            // 
+            this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Location = new System.Drawing.Point(164, 128);
+            this.lblTiempo.Name = "lblTiempo";
+            this.lblTiempo.Size = new System.Drawing.Size(34, 13);
+            this.lblTiempo.TabIndex = 1;
+            this.lblTiempo.Text = "00:00";
+            // 
+            // Reproductor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.btnPlayPause);
-            this.Name = "UserControl1";
+            this.Name = "Reproductor";
             this.Size = new System.Drawing.Size(800, 450);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnPlayPause;
+        private System.Windows.Forms.Label lblTiempo;
     }
 }

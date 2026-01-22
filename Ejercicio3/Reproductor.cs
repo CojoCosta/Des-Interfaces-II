@@ -29,10 +29,49 @@ namespace Ejercicio3
                 btnPlayPause.Text = "Play";
                 playPause = true;
             }
+            Refresh();
         }
         [Category ("Clickar")]
         [Description("play click")]
-        public event EventHandler PlayClick;
+        public event System.EventHandler PlayClick;
 
+        [Category("Tiempo")]
+        [Description("Nº de minutos")]
+        private int minutos;
+        public int Minutos
+        {
+            set
+            {
+                minutos = value;
+                if (minutos / 60 == 0)
+                {
+                    minutos = 0;
+                }
+                Refresh();
+            }
+            get
+            {
+                return minutos;
+            }
+        }
+        [Category("Tiempo")]
+        [Description("Nº de segundos")]
+        private int segundos;
+        public int Segundos
+        {
+            set
+            {
+                segundos = value;
+                if (segundos / 60 == 0)
+                {
+                    segundos = 0;
+                }
+                Refresh();
+            }
+            get
+            {
+                return segundos;
+            }
+        }
     }
 }

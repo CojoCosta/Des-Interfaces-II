@@ -89,19 +89,22 @@ namespace Ejercicio2
         [Category("Clickar")]
         [Description("Solo poder hacer click en la imagen")]
         public event System.EventHandler ClickEnMarca;
-        protected override void OnMouseClick(MouseEventArgs e)
-        {
-            base.OnMouseClick(e);
-            if (marca != EMarca.Nada)
-            {
-                
-            }
-        }
-        protected virtual void OnClickEnMarca(object sender)
+        protected virtual void OnClickEnMarca()
         {
             if (ClickEnMarca != null)
             {
-                ClickEnMarca(sender, EventArgs.Empty);
+                ClickEnMarca(this, EventArgs.Empty);
+            }
+        }
+        protected override void OnMouseClick(MouseEventArgs e)
+        {
+            base.OnMouseClick(e);
+            int x = e.X;
+            int y = e.Y;
+
+            if (marca != EMarca.Nada && x < offsetX)
+            {
+                OnClickEnMarca();
             }
         }
 

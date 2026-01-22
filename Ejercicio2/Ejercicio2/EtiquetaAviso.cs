@@ -108,9 +108,9 @@ namespace Ejercicio2
             }
         }
 
-        private EMarca marca = EMarca.Nada;
         [Category("Appearance")]
         [Description("Indica el tipo de marca que aparece junto al texto")]
+        private EMarca marca = EMarca.Nada;
         public EMarca Marca
         {
             set

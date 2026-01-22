@@ -132,6 +132,7 @@ namespace Ejercicio2
             set
             {
                 this.colorInicial = value;
+                Refresh();
             }
             get
             {
@@ -146,6 +147,7 @@ namespace Ejercicio2
             set
             {
                 this.colorFinal = value;
+                Refresh();
             }
             get
             {
@@ -161,6 +163,7 @@ namespace Ejercicio2
             set
             {
                 this.gradiente = value;
+                Refresh();
             }
             get
             {
@@ -176,6 +179,7 @@ namespace Ejercicio2
             set
             {
                 this.imagenMarca = value;
+                Refresh();
             }
             get
             {

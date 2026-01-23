@@ -10,7 +10,7 @@ using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
+using static System.Net.Mime.MediaTypeNames;//Revisar offset nada,
 
 namespace Ejercicio2
 {

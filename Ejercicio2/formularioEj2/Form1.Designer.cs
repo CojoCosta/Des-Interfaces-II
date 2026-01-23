@@ -36,12 +36,12 @@
             this.etiquetaAviso1.ColorFinal = System.Drawing.Color.Yellow;
             this.etiquetaAviso1.ColorInicial = System.Drawing.Color.Cyan;
             this.etiquetaAviso1.Font = new System.Drawing.Font("Mongolian Baiti", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.etiquetaAviso1.Gradiente = true;
-            this.etiquetaAviso1.ImagenMarca = null;
+            this.etiquetaAviso1.Gradiente = false;
+            this.etiquetaAviso1.ImagenMarca = global::formularioEj2.Properties.Resources.img101;
             this.etiquetaAviso1.Location = new System.Drawing.Point(103, 109);
             this.etiquetaAviso1.Marca = Ejercicio2.EtiquetaAviso.EMarca.Imagen;
             this.etiquetaAviso1.Name = "etiquetaAviso1";
-            this.etiquetaAviso1.Size = new System.Drawing.Size(494, 82);
+            this.etiquetaAviso1.Size = new System.Drawing.Size(497, 82);
             this.etiquetaAviso1.TabIndex = 0;
             this.etiquetaAviso1.Text = "etiquetaAviso1";
             this.etiquetaAviso1.ClickEnMarca += new System.EventHandler(this.etiquetaAviso1_ClickEnMarca);

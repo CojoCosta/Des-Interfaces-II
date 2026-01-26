@@ -34,7 +34,7 @@
             // 
             // btnPlayPause
             // 
-            this.btnPlayPause.Location = new System.Drawing.Point(146, 144);
+            this.btnPlayPause.Location = new System.Drawing.Point(111, 43);
             this.btnPlayPause.Name = "btnPlayPause";
             this.btnPlayPause.Size = new System.Drawing.Size(75, 23);
             this.btnPlayPause.TabIndex = 0;
@@ -45,7 +45,7 @@
             // lblTiempo
             // 
             this.lblTiempo.AutoSize = true;
-            this.lblTiempo.Location = new System.Drawing.Point(164, 128);
+            this.lblTiempo.Location = new System.Drawing.Point(133, 69);
             this.lblTiempo.Name = "lblTiempo";
             this.lblTiempo.Size = new System.Drawing.Size(34, 13);
             this.lblTiempo.TabIndex = 1;
@@ -58,7 +58,7 @@
             this.Controls.Add(this.lblTiempo);
             this.Controls.Add(this.btnPlayPause);
             this.Name = "Reproductor";
-            this.Size = new System.Drawing.Size(800, 450);
+            this.Size = new System.Drawing.Size(309, 123);
             this.ResumeLayout(false);
             this.PerformLayout();
 

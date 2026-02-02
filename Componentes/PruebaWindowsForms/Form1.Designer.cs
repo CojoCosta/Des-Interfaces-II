@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(532, 390);
+            this.button1.Location = new System.Drawing.Point(541, 356);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -45,7 +45,7 @@
             // 
             // labelTexbox1
             // 
-            this.labelTexbox1.Location = new System.Drawing.Point(485, 273);
+            this.labelTexbox1.Location = new System.Drawing.Point(494, 239);
             this.labelTexbox1.Name = "labelTexbox1";
             this.labelTexbox1.Posicion = LabelTexBox.EPosicion.IZQUIERDA;
             this.labelTexbox1.Separacion = 20;

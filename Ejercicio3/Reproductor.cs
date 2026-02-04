@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Ejercicio3
 {
-    public partial class Reproductor: UserControl
+    public partial class Reproductor : UserControl
     {
         String formatotiempo;
         public Reproductor()
@@ -18,25 +18,23 @@ namespace Ejercicio3
             InitializeComponent();
             formatotiempo = $"{Minutos:00}:{Segundos:00}";
         }
-        bool playPause = true;
 
-        [Category ("Clickar")]
+        [Category("Clickar")]
         [Description("Pulsar botón")]
         public event EventHandler PlayClick;
 
+        public virtual void OnPlayClick(object sender, EventArgs e)
+        {
+            if (PlayClick != null)
+            {
+                PlayClick(this, EventArgs.Empty);
+            }
+        }
+
         private void btnPlayPause_Click(object sender, EventArgs e)
         {
-            if (playPause)
-            {
-                btnPlayPause.Text = "Pause";
-                playPause = false;
-            }
-            else
-            {
-                btnPlayPause.Text = "Play";
-                playPause = true;
-            }
-            Refresh();
+            btnPlayPause.Text = btnPlayPause.Text == "Play" ? "Pause" : "Play";
+            OnPlayClick(sender, e);
         }
 
         [Category("Tiempo")]
@@ -69,7 +67,7 @@ namespace Ejercicio3
                 if (segundos > 59)
                 {
                     segundos = value % 60;
-                    OnDesbordaTiempo(this,EventArgs.Empty);
+                    OnDesbordaTiempo(this, EventArgs.Empty);
                 }
                 Refresh();
             }

@@ -12,11 +12,18 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
+        String path = "";
+        int intervaloFotos = 0;
+        bool flagReproduccion = false;
         public Form1()
         {
             InitializeComponent();
+            for (int i = 1; i < 21; i++)
+            {
+                cbIntervalo.Items.Add(i);
+            }
         }
-        String path = "";
+
         private void btnSelectDirectory_Click(object sender, EventArgs e)
         {
             using (FolderBrowserDialog dialog = new FolderBrowserDialog())
@@ -28,6 +35,27 @@ namespace WindowsFormsApp1
                 }
             }
         }
-        
+        private void cbIntervalo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            intervaloFotos = int.Parse(cbIntervalo.SelectedItem.ToString());
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (flagReproduccion)
+            {
+                
+            }
+        }
+
+
+        private void reproductor1_PlayClick(object sender, EventArgs e)
+        {
+            flagReproduccion = !flagReproduccion;
+            if (flagReproduccion)
+            {
+                
+            }
+        }
     }
 }

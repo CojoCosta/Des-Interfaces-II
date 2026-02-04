@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.reproductor1 = new Ejercicio3.Reproductor();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gbFotos = new System.Windows.Forms.GroupBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnSelectDirectory = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,14 +44,14 @@
             this.reproductor1.Size = new System.Drawing.Size(137, 85);
             this.reproductor1.TabIndex = 0;
             // 
-            // groupBox1
+            // gbFotos
             // 
-            this.groupBox1.Location = new System.Drawing.Point(60, 32);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(687, 315);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "groupBox1";
+            this.gbFotos.Location = new System.Drawing.Point(60, 32);
+            this.gbFotos.Name = "gbFotos";
+            this.gbFotos.Size = new System.Drawing.Size(687, 315);
+            this.gbFotos.TabIndex = 1;
+            this.gbFotos.TabStop = false;
+            this.gbFotos.Text = "groupBox1";
             // 
             // btnSelectDirectory
             // 
@@ -69,7 +69,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnSelectDirectory);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbFotos);
             this.Controls.Add(this.reproductor1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
@@ -82,7 +82,7 @@
         #endregion
 
         private Ejercicio3.Reproductor reproductor1;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gbFotos;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnSelectDirectory;
     }

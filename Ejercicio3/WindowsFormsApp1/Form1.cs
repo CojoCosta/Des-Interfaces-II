@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
                     path = dialog.SelectedPath;
                 }
             }
-            
         }
+        
     }
 }

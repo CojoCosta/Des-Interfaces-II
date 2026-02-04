@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36518.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio3", "Ejercicio3.csproj", "{885208B0-1316-43F8-8DE4-31ED033C6696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApp1", "WindowsFormsApp1\WindowsFormsApp1.csproj", "{A5F18C4B-6BBE-4F85-A309-6FC14EF66402}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ejercicio3Formulario", "WindowsFormsApp1\Ejercicio3Formulario.csproj", "{A5F18C4B-6BBE-4F85-A309-6FC14EF66402}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

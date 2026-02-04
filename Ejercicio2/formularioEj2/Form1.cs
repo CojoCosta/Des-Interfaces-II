@@ -21,5 +21,19 @@ namespace formularioEj2
         {
             MessageBox.Show("Has clickado en el icono o imagen");
         }
+
+
+        //TODO  A PARTIR DE AQUI EJERCICIO 3
+        private void btnSelectdirectory_Click(object sender, EventArgs e)
+        {
+            using (FolderBrowserDialog directorio = new FolderBrowserDialog())
+            {
+                directorio.Description = "Elige un directorio";
+                //if (directorio.)
+                {
+                    
+                }
+            }
+        }
     }
 }

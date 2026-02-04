@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B79EEC9-DB24-4F8E-B495-A31281C65B0B}</ProjectGuid>
+    <ProjectGuid>{A5F18C4B-6BBE-4F85-A309-6FC14EF66402}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>formularioEj2</RootNamespace>
-    <AssemblyName>formularioEj2</AssemblyName>
+    <RootNamespace>WindowsFormsApp1</RootNamespace>
+    <AssemblyName>WindowsFormsApp1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -65,7 +65,6 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,17 +80,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Ejercicio3\Ejercicio3.csproj">
+    <ProjectReference Include="..\Ejercicio3.csproj">
       <Project>{885208B0-1316-43F8-8DE4-31ED033C6696}</Project>
       <Name>Ejercicio3</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Ejercicio2\Ejercicio2.csproj">
-      <Project>{821D85D5-B50F-4728-9979-B8345DC8B6E5}</Project>
-      <Name>Ejercicio2</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\img101.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

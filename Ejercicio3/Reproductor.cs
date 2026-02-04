@@ -69,6 +69,7 @@ namespace Ejercicio3
                 if (segundos > 59)
                 {
                     segundos = value % 60;
+                    OnDesbordaTiempo(this,EventArgs.Empty);
                 }
                 Refresh();
             }
@@ -83,7 +84,10 @@ namespace Ejercicio3
 
         public virtual void OnDesbordaTiempo(object sender, EventArgs e)
         {
-
+            if (DesbordaTiempo != null)
+            {
+                DesbordaTiempo(this, EventArgs.Empty);
+            }
         }
     }
 }

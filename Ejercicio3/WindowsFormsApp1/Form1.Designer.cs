@@ -49,7 +49,7 @@
             // 
             // btnSelectDirectory
             // 
-            this.btnSelectDirectory.Location = new System.Drawing.Point(192, 383);
+            this.btnSelectDirectory.Location = new System.Drawing.Point(194, 385);
             this.btnSelectDirectory.Name = "btnSelectDirectory";
             this.btnSelectDirectory.Size = new System.Drawing.Size(141, 23);
             this.btnSelectDirectory.TabIndex = 2;

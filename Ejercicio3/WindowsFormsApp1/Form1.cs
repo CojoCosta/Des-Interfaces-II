@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,14 +27,22 @@ namespace WindowsFormsApp1
 
         private void btnSelectDirectory_Click(object sender, EventArgs e)
         {
-            using (FolderBrowserDialog dialog = new FolderBrowserDialog())
+            try
             {
-                dialog.Description = "Selecciona un directorio";
-                if (dialog.ShowDialog() == DialogResult.OK)
+                using (FolderBrowserDialog dialog = new FolderBrowserDialog())
                 {
-                    path = dialog.SelectedPath;
+                    dialog.Description = "Selecciona un directorio";
+                    if (dialog.ShowDialog() == DialogResult.OK)
+                    {
+                        path = dialog.SelectedPath;
+                    }
                 }
             }
+            catch (DirectoryNotFoundException ex)
+            {
+                Console.WriteLine("Error con el directorio");
+            }
+
         }
         private void cbIntervalo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -44,7 +53,7 @@ namespace WindowsFormsApp1
         {
             if (flagReproduccion)
             {
-                
+
             }
         }
 
@@ -54,7 +63,7 @@ namespace WindowsFormsApp1
             flagReproduccion = !flagReproduccion;
             if (flagReproduccion)
             {
-                
+
             }
         }
     }

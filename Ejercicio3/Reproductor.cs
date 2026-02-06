@@ -12,11 +12,16 @@ namespace Ejercicio3
 {
     public partial class Reproductor : UserControl
     {
-        String formatotiempo;
         public Reproductor()
         {
             InitializeComponent();
-            formatotiempo = $"{Minutos:00}:{Segundos:00}";
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            base.OnPaint(e);
+            lblTiempo.Text = $"{Minutos:00}:{Segundos:00}";
+
         }
 
         [Category("Clickar")]
@@ -44,10 +49,13 @@ namespace Ejercicio3
         {
             set
             {
-                minutos = value;
-                if (minutos > 59)
+                if (value > 0)
                 {
-                    minutos = 0;
+                    new ArgumentException();
+                }
+                if (value % 60 == 0)
+                {
+                    OnDesbordaTiempo(this, EventArgs.Empty);
                 }
                 Refresh();
             }
@@ -63,10 +71,12 @@ namespace Ejercicio3
         {
             set
             {
-                segundos = value;
-                if (segundos > 59)
+                if (value < 0)
                 {
-                    segundos = value % 60;
+                    new ArgumentException();
+                }
+                if (value % 60 == 0)
+                {
                     OnDesbordaTiempo(this, EventArgs.Empty);
                 }
                 Refresh();
@@ -87,5 +97,6 @@ namespace Ejercicio3
                 DesbordaTiempo(this, EventArgs.Empty);
             }
         }
+        
     }
 }

@@ -30,22 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.gbFotos = new System.Windows.Forms.GroupBox();
             this.btnSelectDirectory = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.cbIntervalo = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.reproductor1 = new Ejercicio3.Reproductor();
+            this.pbFotos = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // gbFotos
-            // 
-            this.gbFotos.Location = new System.Drawing.Point(60, 32);
-            this.gbFotos.Name = "gbFotos";
-            this.gbFotos.Size = new System.Drawing.Size(687, 315);
-            this.gbFotos.TabIndex = 1;
-            this.gbFotos.TabStop = false;
-            this.gbFotos.Text = "groupBox1";
             // 
             // btnSelectDirectory
             // 
@@ -91,20 +83,29 @@
             this.reproductor1.TabIndex = 0;
             this.reproductor1.PlayClick += new System.EventHandler(this.reproductor1_PlayClick);
             // 
+            // pbFotos
+            // 
+            this.pbFotos.Location = new System.Drawing.Point(60, 39);
+            this.pbFotos.Name = "pbFotos";
+            this.pbFotos.Size = new System.Drawing.Size(526, 284);
+            this.pbFotos.TabIndex = 5;
+            this.pbFotos.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 450);
+            this.Controls.Add(this.pbFotos);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbIntervalo);
             this.Controls.Add(this.btnSelectDirectory);
-            this.Controls.Add(this.gbFotos);
             this.Controls.Add(this.reproductor1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reproductor";
+            ((System.ComponentModel.ISupportInitialize)(this.pbFotos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -113,11 +114,11 @@
         #endregion
 
         private Ejercicio3.Reproductor reproductor1;
-        private System.Windows.Forms.GroupBox gbFotos;
         private System.Windows.Forms.Button btnSelectDirectory;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ComboBox cbIntervalo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pbFotos;
     }
 }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Configuration;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -14,8 +15,11 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         String path = "";
+        int tiempoParaCambiar = 0;
         int intervaloFotos = 0;
-        bool flagReproduccion = false;
+        int indiceFotos = 0;
+        FileInfo[] fotos;
+        DirectoryInfo d;
         public Form1()
         {
             InitializeComponent();
@@ -35,6 +39,9 @@ namespace WindowsFormsApp1
                     if (dialog.ShowDialog() == DialogResult.OK)
                     {
                         path = dialog.SelectedPath;
+                        d = new DirectoryInfo(path);
+                        fotos = d.GetFiles();
+                        cambiarImagen();
                     }
                 }
             }
@@ -51,19 +58,46 @@ namespace WindowsFormsApp1
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if (flagReproduccion)
+            reproductor1.Segundos++;
+            tiempoParaCambiar++;
+            if (tiempoParaCambiar == intervaloFotos)
             {
+                tiempoParaCambiar = 0;
+                cambiarImagen();
+            }
 
+        }
+
+        public void cambiarImagen()
+        {
+            try
+            {
+                if (fotos != null || fotos.Length != 0)
+                {
+                    pbFotos.ImageLocation = fotos[indiceFotos].FullName;
+                }
+            }
+            catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException)
+            {
+                MessageBox.Show("Error", "Directorio inexistente o directorio sin imagenes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            indiceFotos++;
+            if (indiceFotos >= fotos.Length)
+            {
+                indiceFotos = 0;
             }
         }
 
 
         private void reproductor1_PlayClick(object sender, EventArgs e)
         {
-            flagReproduccion = !flagReproduccion;
-            if (flagReproduccion)
+            if (timer1.Enabled)
             {
-
+                timer1.Stop();
+            }
+            else
+            {
+                timer1.Start();
             }
         }
     }

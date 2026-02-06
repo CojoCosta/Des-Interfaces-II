@@ -10,19 +10,13 @@ using System.Windows.Forms;
 
 namespace Ejercicio3
 {
-    public partial class Reproductor : UserControl
+    public partial class Reproductor : UserControl//Revisar minutos y segundos.
     {
         public Reproductor()
         {
             InitializeComponent();
         }
 
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            base.OnPaint(e);
-            lblTiempo.Text = $"{Minutos:00}:{Segundos:00}";
-
-        }
 
         [Category("Clickar")]
         [Description("Pulsar botón")]
@@ -49,15 +43,19 @@ namespace Ejercicio3
         {
             set
             {
-                if (value > 0)
+                if (value < 0)
                 {
                     new ArgumentException();
                 }
-                if (value % 60 == 0)
+                if (value > 59)
                 {
-                    OnDesbordaTiempo(this, EventArgs.Empty);
+                    if (value % 60 == 0)
+                    {
+                        OnDesbordaTiempo(this, EventArgs.Empty);
+                    }
                 }
-                Refresh();
+                minutos = value;
+                lblTiempo.Text = $"{Minutos:00}:{Segundos:00}";
             }
             get
             {
@@ -75,11 +73,20 @@ namespace Ejercicio3
                 {
                     new ArgumentException();
                 }
-                if (value % 60 == 0)
+                if (value > 59)
                 {
-                    OnDesbordaTiempo(this, EventArgs.Empty);
+                    if (value % 60 == 0)
+                    {
+                        OnDesbordaTiempo(this, EventArgs.Empty);
+                    }
+                    segundos = value % 60;
+                    minutos++;
                 }
-                Refresh();
+                else
+                {
+                    segundos = value;
+                }
+                lblTiempo.Text = $"{Minutos:00}:{Segundos:00}";
             }
             get
             {

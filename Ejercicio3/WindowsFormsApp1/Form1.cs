@@ -27,6 +27,7 @@ namespace WindowsFormsApp1
             {
                 cbIntervalo.Items.Add(i);
             }
+            cbIntervalo.SelectedItem = 1;
         }
 
         private void btnSelectDirectory_Click(object sender, EventArgs e)
@@ -65,29 +66,35 @@ namespace WindowsFormsApp1
                 tiempoParaCambiar = 0;
                 cambiarImagen();
             }
-
         }
 
         public void cambiarImagen()
         {
             try
             {
-                if (fotos != null || fotos.Length != 0)
+                if (fotos != null && fotos.Length != 0)
                 {
-                    pbFotos.ImageLocation = fotos[indiceFotos].FullName;
+                    string extension = Path.GetExtension(fotos[indiceFotos].FullName).ToLower();
+                    if (extension == ".png" || extension == ".jpg" || extension == ".jpeg" || extension == ".jfif")
+                    {
+                        pbFotos.ImageLocation = fotos[indiceFotos].FullName;
+                    }
+                    else 
+                    {
+                        indiceFotos++;
+                    }
+                    indiceFotos++;
+                }
+                if (indiceFotos >= fotos.Length)
+                {
+                    indiceFotos = 0;
                 }
             }
-            catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException)
+            catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException || ex is NullReferenceException || ex is IndexOutOfRangeException)
             {
                 MessageBox.Show("Error", "Directorio inexistente o directorio sin imagenes", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            indiceFotos++;
-            if (indiceFotos >= fotos.Length)
-            {
-                indiceFotos = 0;
-            }
         }
-
 
         private void reproductor1_PlayClick(object sender, EventArgs e)
         {

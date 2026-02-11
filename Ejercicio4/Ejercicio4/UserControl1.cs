@@ -71,5 +71,12 @@ namespace Ejercicio4
             base.OnPaint(e);
 
         }
+        private void pintar(int error)
+        {
+            switch (errores)
+            {
+
+            }
+        }
     }
 }

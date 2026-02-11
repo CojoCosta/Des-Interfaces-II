@@ -45,11 +45,11 @@
             // 
             // labelTexbox1
             // 
-            this.labelTexbox1.Location = new System.Drawing.Point(494, 239);
+            this.labelTexbox1.Location = new System.Drawing.Point(228, 198);
             this.labelTexbox1.Name = "labelTexbox1";
             this.labelTexbox1.Posicion = LabelTexBox.EPosicion.IZQUIERDA;
             this.labelTexbox1.Separacion = 20;
-            this.labelTexbox1.Size = new System.Drawing.Size(303, 20);
+            this.labelTexbox1.Size = new System.Drawing.Size(201, 20);
             this.labelTexbox1.TabIndex = 2;
             this.labelTexbox1.TextLbl = "label1";
             this.labelTexbox1.TextTxt = "";

@@ -93,7 +93,7 @@ namespace WindowsFormsApp1//Revisar apertura ditrectorio
             }
             catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException || ex is NullReferenceException || ex is IndexOutOfRangeException)
             {
-
+                pbFotos.BackColor = SystemColors.Window;
             }
         }
 

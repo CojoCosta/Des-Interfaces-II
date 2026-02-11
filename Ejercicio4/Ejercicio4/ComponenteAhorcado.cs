@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ejercicio4
 {
-    public partial class UserControl1: UserControl
+    public partial class ComponenteAhorcado : UserControl
     {
-        public UserControl1()
+        public ComponenteAhorcado()
         {
             InitializeComponent();
         }
@@ -41,7 +41,7 @@ namespace Ejercicio4
             {
                 return errores;
             }
-            
+
         }
 
 
@@ -63,18 +63,42 @@ namespace Ejercicio4
         {
             if (Ahorcado != null)
             {
-              Ahorcado(this, EventArgs.Empty);
+                Ahorcado(this, EventArgs.Empty);
             }
         }
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-
-        }
-        private void pintar(int error)
-        {
+            Pen pen = new Pen(Color.Black);
             switch (errores)
             {
+                case 0:
+                    e.Graphics.Clear(DefaultBackColor);
+                    break;
+                case 1:
+                    e.Graphics.DrawLine(pen, 10, Height - 10, Width / 2, Height - 10);
+                    break;
+                case 2:
+                    e.Graphics.DrawLine(pen, Width / 4, Height - 10, Width / 4, 10);
+                    goto case 1;
+                case 3:
+                    e.Graphics.DrawLine(pen, Width / 4, 10, Width / 2, 10);
+                    goto case 2;
+                case 4:
+                    e.Graphics.DrawLine(pen, Width / 2, 10, Width / 2, Height / 4);
+                    goto case 3;
+                case 5:
+                    e.Graphics.DrawEllipse(pen, Width / 2-15, Height/4, 30 , 30);
+                    goto case 4;
+                case 6:
+                    e.Graphics.DrawLine(pen, Width / 2, Height / 4 + 30, Width / 2, Height / 2);
+                    goto case 5;
+                case 7:
+                    e.Graphics.DrawLine(pen, Width / 2, Height / 4 + 30, Width / 2 - 20, Height / 3);
+                    e.Graphics.DrawLine(pen, Width / 2, Height / 4 + 30, Width / 2 + 20, Height / 3);
+                    e.Graphics.DrawLine(pen, Width / 2, Height / 2, Width / 2 - 20, Height / 2 + 30);
+                    e.Graphics.DrawLine(pen, Width / 2, Height / 2, Width / 2 + 20, Height / 2 + 30);
+                    goto case 6;
 
             }
         }

@@ -1,6 +1,6 @@
 ﻿namespace Ejercicio4
 {
-    partial class UserControl1
+    partial class ComponenteAhorcado
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
-            // UserControl1
+            // ComponenteAhorcado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Name = "UserControl1";
+            this.Name = "ComponenteAhorcado";
             this.Size = new System.Drawing.Size(757, 537);
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker2;
     }
 }

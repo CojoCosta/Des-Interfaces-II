@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace WindowsFormsApp1//Revisar apertura ditrectorio
 {
     public partial class Form1 : Form
     {
@@ -64,8 +64,8 @@ namespace WindowsFormsApp1
             tiempoParaCambiar++;
             if (tiempoParaCambiar == intervaloFotos)
             {
-                tiempoParaCambiar = 0;
                 cambiarImagen();
+                tiempoParaCambiar = 0;
             }
         }
 
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
             }
             catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException || ex is NullReferenceException || ex is IndexOutOfRangeException)
             {
-                MessageBox.Show("Error", "Directorio inexistente o directorio sin imagenes", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 

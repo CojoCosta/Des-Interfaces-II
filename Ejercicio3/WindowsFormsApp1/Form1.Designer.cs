@@ -76,7 +76,7 @@
             // reproductor1
             // 
             this.reproductor1.Location = new System.Drawing.Point(60, 364);
-            this.reproductor1.Minutos = 0;
+            this.reproductor1.Minutos = 66;
             this.reproductor1.Name = "reproductor1";
             this.reproductor1.Segundos = 0;
             this.reproductor1.Size = new System.Drawing.Size(137, 85);

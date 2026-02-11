@@ -49,10 +49,11 @@ namespace Ejercicio3
                 }
                 if (value > 59)
                 {
-                    if (value % 60 == 0)
+                   // if (value % 60 == 0)
                     {
                         OnDesbordaTiempo(this, EventArgs.Empty);
                     }
+                    value = 0;
                 }
                 minutos = value;
                 lblTiempo.Text = $"{Minutos:00}:{Segundos:00}";
@@ -80,7 +81,7 @@ namespace Ejercicio3
                         OnDesbordaTiempo(this, EventArgs.Empty);
                     }
                     segundos = value % 60;
-                    minutos++;
+                  //  minutos++;
                 }
                 else
                 {

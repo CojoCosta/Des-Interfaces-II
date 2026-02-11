@@ -41,6 +41,7 @@ namespace WindowsFormsApp1
                     {
                         path = dialog.SelectedPath;
                         d = new DirectoryInfo(path);
+                        fotos = new FileInfo[d.GetFiles().Length];
                         fotos = d.GetFiles();
                         cambiarImagen();
                     }
@@ -72,22 +73,22 @@ namespace WindowsFormsApp1
         {
             try
             {
-                if (fotos != null && fotos.Length != 0)
+                if (fotos != null && fotos.Length > 0)
                 {
                     string extension = Path.GetExtension(fotos[indiceFotos].FullName).ToLower();
                     if (extension == ".png" || extension == ".jpg" || extension == ".jpeg" || extension == ".jfif")
                     {
                         pbFotos.ImageLocation = fotos[indiceFotos].FullName;
                     }
-                    else 
+                    else
                     {
-                        indiceFotos++;
+                        pbFotos.ImageLocation = fotos[indiceFotos + 1].FullName;
                     }
                     indiceFotos++;
-                }
-                if (indiceFotos >= fotos.Length)
-                {
-                    indiceFotos = 0;
+                    if (indiceFotos >= fotos.Length)
+                    {
+                        indiceFotos = 0;
+                    }
                 }
             }
             catch (Exception ex) when (ex is FileNotFoundException || ex is OutOfMemoryException || ex is NullReferenceException || ex is IndexOutOfRangeException)

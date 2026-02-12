@@ -36,9 +36,9 @@ namespace Ejercicio3
             OnPlayClick(sender, e);
         }
 
+        private int minutos;
         [Category("Tiempo")]
         [Description("Nº de minutos")]
-        private int minutos;
         public int Minutos
         {
             set
@@ -63,9 +63,9 @@ namespace Ejercicio3
                 return minutos;
             }
         }
+        private int segundos;
         [Category("Tiempo")]
         [Description("Nº de segundos")]
-        private int segundos;
         public int Segundos
         {
             set

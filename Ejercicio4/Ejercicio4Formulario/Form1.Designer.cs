@@ -36,7 +36,7 @@
             this.componenteAhorcado1.Errores = 7;
             this.componenteAhorcado1.Location = new System.Drawing.Point(25, 12);
             this.componenteAhorcado1.Name = "componenteAhorcado1";
-            this.componenteAhorcado1.Size = new System.Drawing.Size(502, 433);
+            this.componenteAhorcado1.Size = new System.Drawing.Size(357, 368);
             this.componenteAhorcado1.TabIndex = 0;
             // 
             // Form1

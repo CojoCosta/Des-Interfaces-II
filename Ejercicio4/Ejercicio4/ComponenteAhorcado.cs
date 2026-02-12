@@ -73,7 +73,7 @@ namespace Ejercicio4
         protected override void OnPaint(PaintEventArgs e)
         {
             base.OnPaint(e);
-            Pen pen = new Pen(Color.Black);
+            Pen pen = new Pen(Color.Black, 10f);
             switch (errores)
             {
                 case 0:

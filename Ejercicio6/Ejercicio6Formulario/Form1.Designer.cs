@@ -1,4 +1,4 @@
-﻿namespace Ejercicio4Formulario
+﻿namespace Ejercicio6Formulario
 {
     partial class Form1
     {
@@ -28,32 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.componenteAhorcado1 = new Ejercicio4.ComponenteAhorcado();
-            this.SuspendLayout();
-            // 
-            // componenteAhorcado1
-            // 
-            this.componenteAhorcado1.Errores = 7;
-            this.componenteAhorcado1.Location = new System.Drawing.Point(25, 12);
-            this.componenteAhorcado1.Name = "componenteAhorcado1";
-            this.componenteAhorcado1.Size = new System.Drawing.Size(502, 433);
-            this.componenteAhorcado1.TabIndex = 0;
-            // 
-            // Form1
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 556);
-            this.Controls.Add(this.componenteAhorcado1);
-            this.Name = "Form1";
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Text = "Form1";
-            this.ResumeLayout(false);
-
         }
 
         #endregion
-
-        private Ejercicio4.ComponenteAhorcado componenteAhorcado1;
     }
 }
 

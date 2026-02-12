@@ -27,12 +27,16 @@ namespace Ejercicio4
                 if (value < 0)
                 {
                     value = 0;
-                    Refresh();
                 }
                 if (value > 7)
                 {
                     value = 7;
-                    Refresh();
+                    OnAhorcado(this, EventArgs.Empty);
+                }
+                if (errores != value)
+                {
+                    OnCambiaError(this, EventArgs.Empty);
+
                 }
                 errores = value;
                 Refresh();
@@ -76,28 +80,30 @@ namespace Ejercicio4
                     e.Graphics.Clear(DefaultBackColor);
                     break;
                 case 1:
-                    e.Graphics.DrawLine(pen, 10, Height - 10, Width / 2, Height - 10);
+                    e.Graphics.DrawLine(pen, Width * 0.1f, Height * 0.9f, Width * 0.9f, Height * 0.9f);
                     break;
                 case 2:
-                    e.Graphics.DrawLine(pen, Width / 4, Height - 10, Width / 4, 10);
+                    e.Graphics.DrawLine(pen, Width * 0.45f, Height * 0.9f, Width * 0.45f, Height * 0.1f);
                     goto case 1;
                 case 3:
-                    e.Graphics.DrawLine(pen, Width / 4, 10, Width / 2, 10);
+                    e.Graphics.DrawLine(pen, Width * 0.45f, Height * 0.1f, Width * 0.75f, Height * 0.1f);
                     goto case 2;
                 case 4:
-                    e.Graphics.DrawLine(pen, Width / 2, 10, Width / 2, Height / 4);
+                    e.Graphics.DrawLine(pen, Width * 0.75f, Height * 0.1f, Width * 0.75f, Height * 0.25f);
                     goto case 3;
                 case 5:
-                    e.Graphics.DrawEllipse(pen, Width / 2-15, Height/4, 30 , 30);
+                    e.Graphics.DrawEllipse(pen, Width * 0.70f, Height * 0.25f, Width * 0.1f, Width * 0.1f);
                     goto case 4;
                 case 6:
-                    e.Graphics.DrawLine(pen, Width / 2, Height / 4 + 30, Width / 2, Height / 2);
+                    e.Graphics.DrawLine(pen, Width * 0.75f, Height * 0.25f + Width * 0.1f, Width * 0.75f, Height * 0.65f);
                     goto case 5;
                 case 7:
-                    e.Graphics.DrawLine(pen, Width / 2, Height / 4 + 30, Width / 2 - 20, Height / 3);
-                    e.Graphics.DrawLine(pen, Width / 2, Height / 4 + 30, Width / 2 + 20, Height / 3);
-                    e.Graphics.DrawLine(pen, Width / 2, Height / 2, Width / 2 - 20, Height / 2 + 30);
-                    e.Graphics.DrawLine(pen, Width / 2, Height / 2, Width / 2 + 20, Height / 2 + 30);
+                    //BRAZOS
+                    e.Graphics.DrawLine(pen, Width * 0.75f, Height * 0.25f + Width * 0.1f, Width * 0.55f, Height * 0.5f);
+                    e.Graphics.DrawLine(pen, Width * 0.75f, Height * 0.25f + Width * 0.1f, Width * 0.95f, Height * 0.5f);
+                    //PIERNAS
+                    e.Graphics.DrawLine(pen, Width * 0.75f, Height * 0.65f, Width * 0.55f, Height * 0.85f);
+                    e.Graphics.DrawLine(pen, Width * 0.75f, Height * 0.65f, Width * 0.95f, Height * 0.85f);
                     goto case 6;
 
             }

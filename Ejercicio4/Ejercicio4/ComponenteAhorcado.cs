@@ -17,9 +17,9 @@ namespace Ejercicio4
             InitializeComponent();
         }
 
+        private int errores;
         [Category("ZZComponentes Nuevos")]
         [Description("Enumera el número de errores")]
-        private int errores;
         public int Errores
         {
             set

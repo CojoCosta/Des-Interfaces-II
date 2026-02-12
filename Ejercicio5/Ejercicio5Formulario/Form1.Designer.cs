@@ -28,15 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.validateTextBox1 = new Ejercicio5.ValidateTextBox();
             this.SuspendLayout();
             // 
             // validateTextBox1
             // 
-            this.validateTextBox1.Location = new System.Drawing.Point(25, 22);
+            this.validateTextBox1.Location = new System.Drawing.Point(10, 10);
+            this.validateTextBox1.Multilinea = true;
             this.validateTextBox1.Name = "validateTextBox1";
-            this.validateTextBox1.Size = new System.Drawing.Size(334, 157);
+            this.validateTextBox1.Size = new System.Drawing.Size(244, 40);
             this.validateTextBox1.TabIndex = 0;
+            this.validateTextBox1.Texto = null;
             // 
             // Form1
             // 
@@ -44,8 +47,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.validateTextBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Prueba ValidateTextBox";
             this.ResumeLayout(false);
 
         }

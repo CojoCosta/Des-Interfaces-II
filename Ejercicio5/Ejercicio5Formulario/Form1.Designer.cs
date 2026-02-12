@@ -33,9 +33,9 @@
             // 
             // validateTextBox1
             // 
-            this.validateTextBox1.Location = new System.Drawing.Point(85, 74);
+            this.validateTextBox1.Location = new System.Drawing.Point(25, 22);
             this.validateTextBox1.Name = "validateTextBox1";
-            this.validateTextBox1.Size = new System.Drawing.Size(486, 282);
+            this.validateTextBox1.Size = new System.Drawing.Size(334, 157);
             this.validateTextBox1.TabIndex = 0;
             // 
             // Form1
